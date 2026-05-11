@@ -1,0 +1,37 @@
+import { Component, inject } from '@angular/core';
+import { ChipModule } from 'primeng/chip';
+import { I18nService } from '../../core/i18n.service';
+
+@Component({
+  selector: 'app-skills',
+  standalone: true,
+  imports: [ChipModule],
+  template: `
+    <section id="skills" class="bg-white py-20 dark:bg-zinc-950">
+      <div class="mx-auto max-w-6xl px-4">
+        <h2 class="animate-page-in text-3xl font-black text-slate-950 dark:text-white">{{ i18n.t('skills.title') }}</h2>
+        <p class="mt-3 text-slate-600 animate-page-in [animation-delay:70ms] dark:text-zinc-300">{{ i18n.t('skills.subtitle') }}</p>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          @for (group of skillGroups; track group.title) {
+            <div class="rounded-lg border border-slate-200 p-5 dark:border-zinc-800">
+              <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ group.title }}</h3>
+              <div class="mt-5 flex flex-wrap gap-2">
+                @for (skill of group.items; track skill) {
+                  <p-chip [label]="skill" />
+                }
+              </div>
+            </div>
+          }
+        </div>
+      </div>
+    </section>
+  `
+})
+export class SkillsComponent {
+  readonly i18n = inject(I18nService);
+  readonly skillGroups = [
+    { title: 'Frontend', items: ['Angular', 'TypeScript', 'RxJS', 'PrimeNG', 'Tailwind CSS'] },
+    { title: 'Qualidade', items: ['Componentizacao', 'Acessibilidade', 'Responsividade', 'Clean Code'] },
+    { title: 'Ferramentas', items: ['Git', 'REST APIs', 'Figma', 'CI/CD', 'Scrum'] }
+  ];
+}

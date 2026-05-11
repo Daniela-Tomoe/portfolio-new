@@ -1,0 +1,7 @@
+<app-header />
+<main class="min-h-[calc(100vh-129px)] overflow-hidden bg-white dark:bg-zinc-950">
+  <div [@routeFade]="routeAnimation(outlet)">
+    <router-outlet #outlet="outlet" />
+  </div>
+</main>
+<app-footer />
