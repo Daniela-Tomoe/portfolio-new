@@ -1,7 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { animate, style, transition, trigger } from '@angular/animations';
-import { ThemeService } from './core/theme.service';
 import { HeaderComponent } from './layout/header.component';
 import { FooterComponent } from './layout/footer.component';
 
@@ -21,10 +20,6 @@ import { FooterComponent } from './layout/footer.component';
   ]
 })
 export class AppComponent {
-  constructor(private readonly theme: ThemeService) {
-    this.theme.init();
-  }
-
   routeAnimation(outlet: RouterOutlet): string | undefined {
     return outlet.activatedRouteData['animation'];
   }

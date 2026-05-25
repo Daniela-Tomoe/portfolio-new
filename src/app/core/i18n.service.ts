@@ -10,6 +10,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.projects': 'Projetos',
     'nav.experience': 'Experiencia',
     'nav.contact': 'Contato',
+    'theme.toDashboard': 'Usar tema SaaS dashboard',
+    'theme.toTech': 'Usar tema tech moderno',
     'hero.badge': 'Portfolio Angular',
     'hero.title': 'Desenvolvedor Front-end focado em interfaces modernas',
     'hero.subtitle': 'Crio experiencias digitais responsivas, acessiveis e prontas para crescer com Angular, PrimeNG e Tailwind CSS.',
@@ -35,7 +37,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.email': 'E-mail',
     'contact.message': 'Mensagem',
     'contact.send': 'Enviar mensagem',
-    'footer.text': 'Construido com Angular, PrimeNG e Tailwind CSS.'
+    // 'footer.text': 'Construido com Angular, PrimeNG e Tailwind CSS.'
   },
   en: {
     'nav.home': 'Home',
@@ -44,6 +46,8 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.projects': 'Projects',
     'nav.experience': 'Experience',
     'nav.contact': 'Contact',
+    'theme.toDashboard': 'Use SaaS dashboard theme',
+    'theme.toTech': 'Use modern tech theme',
     'hero.badge': 'Angular Portfolio',
     'hero.title': 'Front-end developer focused on modern interfaces',
     'hero.subtitle': 'I build responsive, accessible digital experiences ready to scale with Angular, PrimeNG and Tailwind CSS.',
@@ -69,7 +73,7 @@ const translations: Record<Language, Record<string, string>> = {
     'contact.email': 'Email',
     'contact.message': 'Message',
     'contact.send': 'Send message',
-    'footer.text': 'Built with Angular, PrimeNG and Tailwind CSS.'
+    // 'footer.text': 'Built with Angular, PrimeNG and Tailwind CSS.'
   }
 };
 

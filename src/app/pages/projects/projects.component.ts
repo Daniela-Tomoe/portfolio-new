@@ -22,7 +22,7 @@ export class ProjectsComponent {
     {
       title: 'Portfolio i18n',
       type: 'Website',
-      description: 'Experiencia bilingue com tema claro/escuro e navegacao por secoes.',
+      description: 'Experiencia bilingue com temas personalizados e navegacao por secoes.',
       techs: ['i18n', 'Tailwind', 'UX']
     },
     {
