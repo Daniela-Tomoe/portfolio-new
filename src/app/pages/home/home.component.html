@@ -1,24 +1,23 @@
-<section id="hero" class="bg-white dark:bg-zinc-950">
-  <div class="mx-auto flex min-h-[calc(100vh-64px)] max-w-6xl items-center px-4 py-16">
+<section id="hero" class="app-section">
+  <div class="mx-auto flex min-h-[calc(100vh-145px)] max-w-6xl items-center px-4 py-16">
     <div class="animate-page-in">
-      <p-tag severity="success" [value]="i18n.t('hero.badge')" />
-      <h1 class="mt-6 max-w-3xl text-4xl font-black leading-tight tracking-normal text-slate-950 dark:text-white sm:text-5xl lg:text-6xl">
+      <h1 class="app-title max-w-3xl text-4xl font-black leading-tight tracking-normal sm:text-5xl lg:text-6xl">
         {{ i18n.t('hero.title') }}
       </h1>
-      <p class="mt-5 max-w-2xl text-lg leading-8 text-slate-600 dark:text-zinc-300">
+      <p class="app-muted mt-5 max-w-2xl text-lg leading-8">
         {{ i18n.t('hero.subtitle') }}
       </p>
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <p-button [label]="i18n.t('hero.cta.primary')" icon="pi pi-briefcase" severity="success" (onClick)="goTo('/projects')" />
         <p-button [label]="i18n.t('hero.cta.secondary')" icon="pi pi-send" severity="secondary" [outlined]="true" (onClick)="goTo('/contact')" />
       </div>
-      <div class="mt-10 flex max-w-2xl flex-col gap-3 border-l-4 border-teal-500 pl-5 text-slate-600 dark:text-zinc-300 sm:flex-row sm:items-center sm:gap-8">
+      <div class="app-accent-border app-muted mt-10 flex max-w-2xl flex-col gap-3 border-l-4 pl-5 sm:flex-row sm:items-center sm:gap-8">
         <p class="m-0">
-          <span class="block text-2xl font-black text-slate-950 dark:text-white">4+</span>
+          <span class="app-metric-value block text-2xl font-black">4+</span>
           <span class="text-sm">{{ i18n.t('hero.metric.years') }}</span>
         </p>
         <p class="m-0">
-          <span class="block text-2xl font-black text-slate-950 dark:text-white">Angular</span>
+          <span class="app-metric-value block text-2xl font-black">Angular</span>
           <span class="text-sm">{{ i18n.t('hero.metric.stack') }}</span>
         </p>
       </div>

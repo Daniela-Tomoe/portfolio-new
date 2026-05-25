@@ -1,29 +1,29 @@
-<section id="contact" class="bg-white py-20 dark:bg-zinc-950">
+<section id="contact" class="app-section py-20">
   <div class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr]">
     <div class="animate-page-in">
-      <h2 class="text-3xl font-black text-slate-950 dark:text-white">{{ i18n.t('contact.title') }}</h2>
-      <p class="mt-4 text-lg leading-8 text-slate-600 dark:text-zinc-300">{{ i18n.t('contact.subtitle') }}</p>
-      <div class="mt-8 space-y-3 text-slate-600 dark:text-zinc-300">
-        <p><i class="pi pi-envelope mr-2 text-teal-600"></i>email&#64;exemplo.com</p>
-        <p><i class="pi pi-linkedin mr-2 text-teal-600"></i>linkedin.com/in/seu-perfil</p>
-        <p><i class="pi pi-github mr-2 text-teal-600"></i>github.com/seu-usuario</p>
+      <h2 class="app-title text-3xl font-black">{{ i18n.t('contact.title') }}</h2>
+      <p class="app-muted mt-4 text-lg leading-8">{{ i18n.t('contact.subtitle') }}</p>
+      <div class="app-muted mt-8 space-y-3">
+        <p><i class="app-accent-text pi pi-envelope mr-2"></i>email&#64;exemplo.com</p>
+        <p><i class="app-accent-text pi pi-linkedin mr-2"></i>linkedin.com/in/seu-perfil</p>
+        <p><i class="app-accent-text pi pi-github mr-2"></i>github.com/seu-usuario</p>
       </div>
     </div>
 
-    <form class="rounded-lg border border-slate-200 bg-white p-5 shadow-sm animate-page-in [animation-delay:90ms] dark:border-zinc-800 dark:bg-zinc-950">
+    <form class="app-panel rounded-lg border p-5 shadow-sm animate-page-in [animation-delay:90ms]">
       <div class="grid gap-4 sm:grid-cols-2">
-        <label class="grid gap-2 text-sm font-medium text-slate-700 dark:text-zinc-200">
+        <label class="app-label grid gap-2 text-sm font-medium">
           {{ i18n.t('contact.name') }}
           <input pInputText type="text" name="name" />
         </label>
-        <label class="grid gap-2 text-sm font-medium text-slate-700 dark:text-zinc-200">
+        <label class="app-label grid gap-2 text-sm font-medium">
           {{ i18n.t('contact.email') }}
           <input pInputText type="email" name="email" />
         </label>
       </div>
-      <label class="mt-4 grid gap-2 text-sm font-medium text-slate-700 dark:text-zinc-200">
+      <label class="app-label mt-4 grid gap-2 text-sm font-medium">
         {{ i18n.t('contact.message') }}
-        <textarea class="min-h-36 rounded-md border border-slate-300 bg-white p-3 outline-none focus:border-teal-500 dark:border-zinc-700 dark:bg-zinc-900" name="message"></textarea>
+        <textarea class="app-textarea min-h-36 rounded-md border p-3 outline-none" name="message"></textarea>
       </label>
       <div class="mt-5">
         <p-button [label]="i18n.t('contact.send')" icon="pi pi-send" severity="success" />

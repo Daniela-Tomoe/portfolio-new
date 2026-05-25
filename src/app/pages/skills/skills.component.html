@@ -1,11 +1,11 @@
-<section id="skills" class="bg-white py-20 dark:bg-zinc-950">
+<section id="skills" class="app-section py-20">
   <div class="mx-auto max-w-6xl px-4">
-    <h2 class="animate-page-in text-3xl font-black text-slate-950 dark:text-white">{{ i18n.t('skills.title') }}</h2>
-    <p class="mt-3 text-slate-600 animate-page-in [animation-delay:70ms] dark:text-zinc-300">{{ i18n.t('skills.subtitle') }}</p>
+    <h2 class="app-title animate-page-in text-3xl font-black">{{ i18n.t('skills.title') }}</h2>
+    <p class="app-muted mt-3 animate-page-in [animation-delay:70ms]">{{ i18n.t('skills.subtitle') }}</p>
     <div class="mt-10 grid gap-6 md:grid-cols-3">
       @for (group of skillGroups; track group.title) {
-        <div class="rounded-lg border border-slate-200 p-5 dark:border-zinc-800">
-          <h3 class="text-lg font-bold text-slate-900 dark:text-white">{{ group.title }}</h3>
+        <div class="app-panel rounded-lg border p-5">
+          <h3 class="app-title text-lg font-bold">{{ group.title }}</h3>
           <div class="mt-5 flex flex-wrap gap-2">
             @for (skill of group.items; track skill) {
               <p-chip [label]="skill" />

@@ -1,13 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { Router } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
-import { TagModule } from 'primeng/tag';
 import { I18nService } from '../../core/i18n.service';
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [ButtonModule, TagModule],
+  imports: [ButtonModule],
   templateUrl: './home.component.html'
 })
 export class HomeComponent {

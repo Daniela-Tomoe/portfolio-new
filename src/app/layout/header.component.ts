@@ -2,7 +2,6 @@ import { Component, inject } from '@angular/core';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 import { ButtonModule } from 'primeng/button';
 import { I18nService } from '../core/i18n.service';
-import { ThemeService } from '../core/theme.service';
 
 @Component({
   selector: 'app-header',
@@ -12,5 +11,4 @@ import { ThemeService } from '../core/theme.service';
 })
 export class HeaderComponent {
   readonly i18n = inject(I18nService);
-  readonly theme = inject(ThemeService);
 }
