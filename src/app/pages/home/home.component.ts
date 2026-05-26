@@ -7,6 +7,7 @@ import { I18nService } from '../../core/i18n.service';
   selector: 'app-home',
   standalone: true,
   imports: [ButtonModule],
+  styleUrls: ['./home.component.scss'],
   templateUrl: './home.component.html'
 })
 export class HomeComponent {
