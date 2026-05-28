@@ -11,4 +11,13 @@ import { I18nService } from '../core/i18n.service';
 })
 export class HeaderComponent {
   readonly i18n = inject(I18nService);
+  isMenuOpen = false;
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
 }
