@@ -1,7 +1,10 @@
 <app-header />
-<main class="app-main min-h-[calc(100vh-121px)] overflow-hidden">
-  <div [@routeFade]="routeAnimation(outlet)">
-    <router-outlet #outlet="outlet" />
-  </div>
+<main class="app-main min-h-[calc(100vh-121px)] overflow-x-hidden">
+  <app-home />
+  <app-about />
+  <app-skills />
+  <app-projects />
+  <app-experience />
+  <app-contact />
 </main>
 <app-footer />

@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { ChipModule } from 'primeng/chip';
 import { I18nService } from '../../core/i18n.service';
+import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 
 @Component({
   selector: 'app-skills',
   standalone: true,
-  imports: [ChipModule],
+  imports: [ChipModule, ScrollRevealDirective],
   templateUrl: './skills.component.html'
 })
 export class SkillsComponent {

@@ -3,11 +3,12 @@ import { ButtonModule } from 'primeng/button';
 import { CardModule } from 'primeng/card';
 import { TagModule } from 'primeng/tag';
 import { I18nService } from '../../core/i18n.service';
+import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 
 @Component({
   selector: 'app-projects',
   standalone: true,
-  imports: [ButtonModule, CardModule, TagModule],
+  imports: [ButtonModule, CardModule, TagModule, ScrollRevealDirective],
   templateUrl: './projects.component.html'
 })
 export class ProjectsComponent {

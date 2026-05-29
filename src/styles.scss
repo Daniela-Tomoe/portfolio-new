@@ -6,6 +6,8 @@
 
 :root {
   --app-bg: #0f172a;
+  --app-bg-muted: #111c32;
+  --app-bg-raised: #172033;
   --app-card: #1e293b;
   --app-border: #334155;
   --app-text: #f8fafc;
@@ -49,6 +51,14 @@ h3,
 .app-main,
 .app-section {
   background: var(--app-bg);
+}
+
+.app-section-muted {
+  background: var(--app-bg-muted);
+}
+
+.app-section-raised {
+  background: var(--app-bg-raised);
 }
 
 .app-header {
@@ -143,6 +153,23 @@ code,
   animation: page-in 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
+.app-scroll-reveal {
+  opacity: 0;
+  transform: translateX(-42px);
+  transition: opacity 620ms cubic-bezier(0.22, 1, 0.36, 1), transform 620ms cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.app-scroll-reveal.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.app-scroll-reveal.is-exiting-up {
+  opacity: 0;
+  transform: translateX(-42px);
+}
+
 @keyframes page-in {
   from {
     opacity: 0;
@@ -166,5 +193,12 @@ code,
     animation-duration: 1ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 1ms !important;
+  }
+
+  .app-scroll-reveal,
+  .app-scroll-reveal.is-visible,
+  .app-scroll-reveal.is-exiting-up {
+    opacity: 1;
+    transform: none;
   }
 }

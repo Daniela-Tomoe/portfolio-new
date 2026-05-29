@@ -1,0 +1,27 @@
+<section id="hero" class="app-section">
+  <div appScrollReveal class="mx-auto flex min-h-[calc(100vh-145px)] max-w-6xl items-center px-4 py-16">
+    <div class="w-full">
+      <h1 class="app-title max-w-5xl text-4xl font-black leading-tight tracking-normal sm:text-5xl lg:text-7xl">
+        {{ i18n.t('hero.title') }}
+      </h1>
+      <p-tag class="mt-5 inline-flex" [value]="i18n.t('hero.role')" severity="info" />
+      <p class="app-muted mt-5 max-w-3xl text-lg leading-8">
+        {{ i18n.t('hero.subtitle') }}
+      </p>
+      <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+        <p-button [label]="i18n.t('hero.cta.primary')" icon="pi pi-briefcase" severity="success" (onClick)="scrollTo('projects')" />
+        <p-button [label]="i18n.t('hero.cta.secondary')" icon="pi pi-send" severity="secondary" [outlined]="true" (onClick)="scrollTo('contact')" />
+      </div>
+      <div class="app-accent-border app-muted mt-10 flex max-w-2xl flex-col gap-3 border-l-4 pl-5 sm:flex-row sm:items-center sm:gap-8">
+        <p class="m-0">
+          <span class="app-metric-value block text-2xl font-black">4+</span>
+          <span class="text-sm">{{ i18n.t('hero.metric.years') }}</span>
+        </p>
+        <p class="m-0">
+          <span class="app-metric-value block text-2xl font-black">Angular</span>
+          <span class="text-sm">{{ i18n.t('hero.metric.stack') }}</span>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

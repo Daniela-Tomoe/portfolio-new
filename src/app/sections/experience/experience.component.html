@@ -1,7 +1,7 @@
 <section id="experience" class="app-section py-20">
-  <div class="mx-auto max-w-6xl px-4">
-    <h2 class="app-title animate-page-in text-3xl font-black">{{ i18n.t('experience.title') }}</h2>
-    <p class="app-muted mt-3 animate-page-in [animation-delay:70ms]">{{ i18n.t('experience.subtitle') }}</p>
+  <div appScrollReveal class="mx-auto max-w-6xl px-4">
+    <h2 class="app-title text-3xl font-black">{{ i18n.t('experience.title') }}</h2>
+    <p class="app-muted mt-3">{{ i18n.t('experience.subtitle') }}</p>
     <p-timeline [value]="events" align="alternate" styleClass="mt-12">
       <ng-template pTemplate="content" let-event>
         <article class="app-panel rounded-lg border p-5">

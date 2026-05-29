@@ -1,6 +1,6 @@
-<section id="contact" class="app-section py-20">
-  <div class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr]">
-    <div class="animate-page-in">
+<section id="contact" class="app-section app-section-raised py-20">
+  <div appScrollReveal class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr]">
+    <div>
       <h2 class="app-title text-3xl font-black">{{ i18n.t('contact.title') }}</h2>
       <p class="app-muted mt-4 text-lg leading-8">{{ i18n.t('contact.subtitle') }}</p>
       <div class="app-muted mt-8 space-y-3">
@@ -10,7 +10,7 @@
       </div>
     </div>
 
-    <form class="app-panel rounded-lg border p-5 shadow-sm animate-page-in [animation-delay:90ms]">
+    <form class="app-panel rounded-lg border p-5 shadow-sm">
       <div class="grid gap-4 sm:grid-cols-2">
         <label class="app-label grid gap-2 text-sm font-medium">
           {{ i18n.t('contact.name') }}

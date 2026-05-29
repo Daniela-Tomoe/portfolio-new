@@ -1,11 +1,12 @@
 import { Component, inject } from '@angular/core';
 import { TimelineModule } from 'primeng/timeline';
 import { I18nService } from '../../core/i18n.service';
+import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 
 @Component({
   selector: 'app-experience',
   standalone: true,
-  imports: [TimelineModule],
+  imports: [TimelineModule, ScrollRevealDirective],
   templateUrl: './experience.component.html'
 })
 export class ExperienceComponent {
