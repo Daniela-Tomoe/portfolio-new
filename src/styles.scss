@@ -86,6 +86,11 @@ h3,
   color: var(--app-text);
 }
 
+.app-photo-glow {
+  border-color: color-mix(in srgb, var(--app-accent) 45%, var(--app-border));
+  box-shadow: 0 0 24px color-mix(in srgb, var(--app-accent) 24%, transparent), 0 24px 70px -38px var(--app-accent-strong);
+}
+
 .app-label {
   color: var(--app-text);
 }

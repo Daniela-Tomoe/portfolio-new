@@ -1,14 +1,20 @@
-<section id="about" class="app-section app-section-muted py-20">
-  <div appScrollReveal class="mx-auto max-w-6xl px-4">
-    <h2 class="app-title text-3xl font-black">{{ i18n.t('about.title') }}</h2>
-    <p class="app-muted mt-4 max-w-3xl text-lg leading-8">{{ i18n.t('about.text') }}</p>
-    <div class="mt-10 grid gap-5 md:grid-cols-2">
-      <p-card [header]="i18n.t('about.card1.title')">
-        <p class="app-muted m-0">{{ i18n.t('about.card1.text') }}</p>
-      </p-card>
-      <p-card [header]="i18n.t('about.card2.title')">
-        <p class="app-muted m-0">{{ i18n.t('about.card2.text') }}</p>
-      </p-card>
+<section id="about" class="app-section app-section-muted py-24">
+  <div appScrollReveal class="mx-auto grid max-w-6xl items-center gap-10 px-4 lg:grid-cols-[1.15fr_0.85fr]">
+    <div>
+      <h2 class="app-title text-3xl font-black">{{ i18n.t('about.title') }}</h2>
+      <div class="app-muted mt-6 grid max-w-3xl gap-5 text-lg leading-8">
+        @for (paragraphKey of paragraphKeys; track paragraphKey) {
+          <p class="m-0">{{ i18n.t(paragraphKey) }}</p>
+        }
+      </div>
+    </div>
+
+    <div class="justify-self-center lg:justify-self-end">
+      <img
+        src="assets/images/foto.jpeg"
+        [alt]="i18n.t('about.photoAlt')"
+        class="app-photo-glow aspect-[4/5] w-full max-w-sm rounded-3xl border object-cover"
+      />
     </div>
   </div>
 </section>
