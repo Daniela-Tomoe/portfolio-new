@@ -1,14 +1,14 @@
-<section id="skills" class="app-section py-20">
+<section id="skills" class="app-section py-24">
   <div appScrollReveal class="mx-auto max-w-6xl px-4">
     <h2 class="app-title text-3xl font-black">{{ i18n.t('skills.title') }}</h2>
     <p class="app-muted mt-3">{{ i18n.t('skills.subtitle') }}</p>
     <div class="mt-10 grid gap-6 md:grid-cols-3">
-      @for (group of skillGroups; track group.title) {
-        <div class="app-panel rounded-lg border p-5">
-          <h3 class="app-title text-lg font-bold">{{ group.title }}</h3>
+      @for (group of skillGroups; track group.titleKey) {
+        <div class="app-panel app-skill-card rounded-2xl border p-5">
+          <h3 class="app-title text-xl font-semibold">{{ i18n.t(group.titleKey) }}</h3>
           <div class="mt-5 flex flex-wrap gap-2">
             @for (skill of group.items; track skill) {
-              <p-chip [label]="skill" />
+              <p-chip styleClass="app-skill-chip" [label]="skillLabel(skill)" />
             }
           </div>
         </div>
