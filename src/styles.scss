@@ -5,7 +5,7 @@
 @tailwind utilities;
 
 :root {
-  --app-bg: #0f172a;
+  --app-bg: #0f172b;
   --app-bg-muted: #111c32;
   --app-bg-raised: #172033;
   --app-card: #1e293b;
@@ -91,65 +91,21 @@ h3,
   box-shadow: 0 0 24px color-mix(in srgb, var(--app-accent) 24%, transparent), 0 24px 70px -38px var(--app-accent-strong);
 }
 
-.app-skill-card {
-  background: color-mix(in srgb, var(--app-card) 78%, transparent);
-  border-color: color-mix(in srgb, var(--app-accent) 34%, var(--app-border));
-  box-shadow: 0 0 20px color-mix(in srgb, var(--app-accent) 16%, transparent), 0 18px 52px -42px var(--app-accent-strong);
-}
-
-.app-skill-chip.p-chip {
-  background: color-mix(in srgb, var(--app-accent) 10%, transparent);
-  border: 1px solid color-mix(in srgb, var(--app-accent) 32%, transparent);
-  color: var(--app-subtle);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.35rem 0.7rem;
-}
-
-.app-skill-chip .p-chip-label {
-  line-height: 1.2;
-}
-
-.app-project-card {
-  appearance: none;
+.app-neon-panel {
   background: color-mix(in srgb, var(--app-bg) 76%, var(--app-card));
   border-color: color-mix(in srgb, var(--app-accent) 34%, var(--app-border));
-  border-radius: 1rem;
   box-shadow: 0 0 20px color-mix(in srgb, var(--app-accent) 15%, transparent), 0 18px 52px -42px var(--app-accent-strong);
-  color: inherit;
-  cursor: pointer;
-  overflow: hidden;
-  padding: 0;
-  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
-  width: 100%;
 }
 
-.app-project-card:hover,
-.app-project-card:focus-visible {
+.app-neon-panel-interactive {
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+
+.app-neon-panel-interactive:hover,
+.app-neon-panel-interactive:focus-visible {
   border-color: color-mix(in srgb, var(--app-accent) 62%, var(--app-border));
   box-shadow: 0 0 28px color-mix(in srgb, var(--app-accent) 24%, transparent), 0 20px 58px -38px var(--app-accent-strong);
   transform: translateY(-3px);
-}
-
-.app-project-card:focus-visible {
-  outline: 2px solid var(--app-accent);
-  outline-offset: 4px;
-}
-
-.app-project-image,
-.app-project-dialog-image {
-  aspect-ratio: 16 / 10;
-  background: var(--app-bg);
-  object-fit: cover;
-  width: 100%;
-}
-
-.app-project-tag.p-tag {
-  background: color-mix(in srgb, var(--app-accent) 12%, transparent);
-  border: 1px solid color-mix(in srgb, var(--app-accent) 34%, transparent);
-  color: var(--app-subtle);
-  font-family: var(--app-detail-font);
-  font-weight: 600;
 }
 
 .app-project-dialog .p-dialog-content,
@@ -165,40 +121,31 @@ h3,
 }
 
 .app-project-dialog .p-dialog-header {
-  border-bottom: 1px solid var(--app-border);
   border-radius: 1rem 1rem 0 0;
 }
 
 .app-project-dialog .p-dialog-content {
   border-radius: 0 0 1rem 1rem;
+  scrollbar-color: color-mix(in srgb, var(--app-accent) 52%, var(--app-border)) color-mix(in srgb, var(--app-bg) 78%, transparent);
+  scrollbar-width: thin;
 }
 
-.app-project-dialog-image {
-  border: 1px solid color-mix(in srgb, var(--app-accent) 34%, var(--app-border));
-  border-radius: 8px;
-  box-shadow: 0 0 22px color-mix(in srgb, var(--app-accent) 16%, transparent);
+.app-project-dialog .p-dialog-content::-webkit-scrollbar {
+  width: 0.55rem;
 }
 
-.app-dialog-link {
-  align-items: center;
-  background: color-mix(in srgb, var(--app-accent) 11%, transparent);
-  border: 1px solid color-mix(in srgb, var(--app-accent) 36%, transparent);
-  border-radius: 8px;
-  color: var(--app-text);
-  display: inline-flex;
-  font-weight: 700;
-  gap: 0.5rem;
-  justify-content: center;
-  padding: 0.75rem 1rem;
-  text-decoration: none;
-  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+.app-project-dialog .p-dialog-content::-webkit-scrollbar-track {
+  background: color-mix(in srgb, var(--app-bg) 78%, transparent);
+  border-radius: 999px;
 }
 
-.app-dialog-link:hover,
-.app-dialog-link:focus-visible {
-  background: color-mix(in srgb, var(--app-accent) 18%, transparent);
-  border-color: color-mix(in srgb, var(--app-accent) 58%, transparent);
-  transform: translateY(-1px);
+.app-project-dialog .p-dialog-content::-webkit-scrollbar-thumb {
+  background: color-mix(in srgb, var(--app-accent) 52%, var(--app-border));
+  border-radius: 999px;
+}
+
+.app-project-dialog .p-dialog-content::-webkit-scrollbar-thumb:hover {
+  background: color-mix(in srgb, var(--app-accent) 72%, var(--app-border));
 }
 
 .app-label {
@@ -235,6 +182,19 @@ code,
 .p-chip,
 .p-tag {
   font-family: var(--app-detail-font);
+}
+
+.app-tech-chip.p-chip {
+  background: color-mix(in srgb, var(--app-accent) 10%, transparent);
+  border: 1px solid color-mix(in srgb, var(--app-accent) 32%, transparent);
+  color: var(--app-subtle);
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.35rem 0.7rem;
+}
+
+.app-tech-chip .p-chip-label {
+  line-height: 1.2;
 }
 
 .p-card {

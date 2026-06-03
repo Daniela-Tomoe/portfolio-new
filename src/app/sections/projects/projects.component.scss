@@ -1,0 +1,74 @@
+.app-project-card {
+  appearance: none;
+  border-radius: 1rem;
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  width: 100%;
+}
+
+.app-project-card:focus-visible {
+  outline: 2px solid var(--app-accent);
+  outline-offset: 4px;
+}
+
+.app-project-media {
+  aspect-ratio: 16 / 10;
+  display: block;
+  flex: 0 0 auto;
+  width: 100%;
+}
+
+.app-project-confidential {
+  align-items: center;
+  background: var(--app-bg);
+  color: var(--app-subtle);
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  justify-content: center;
+  min-height: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-project-confidential-icon {
+  align-items: center;
+  color: var(--app-accent);
+  display: inline-flex;
+  filter: drop-shadow(0 0 14px color-mix(in srgb, var(--app-accent) 42%, transparent));
+  font-size: 2.35rem;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+
+.app-project-confidential-icon .pi-lock {
+  color: var(--app-accent);
+}
+
+.app-project-confidential-label {
+  font-family: var(--app-detail-font);
+  font-size: 0.78rem;
+  font-weight: 700;
+  position: relative;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.app-project-dialog-image {
+  border: 1px solid color-mix(in srgb, var(--app-accent) 34%, var(--app-border));
+  border-radius: 8px;
+}
+
+.app-dialog-link {
+  background: color-mix(in srgb, var(--app-accent) 11%, transparent);
+  border-color: color-mix(in srgb, var(--app-accent) 36%, transparent);
+}
+
+.app-dialog-link:hover,
+.app-dialog-link:focus-visible {
+  background: color-mix(in srgb, var(--app-accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--app-accent) 58%, transparent);
+}

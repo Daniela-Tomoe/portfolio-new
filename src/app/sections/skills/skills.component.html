@@ -4,11 +4,11 @@
     <p class="app-muted mt-3">{{ i18n.t('skills.subtitle') }}</p>
     <div class="mt-10 grid gap-6 md:grid-cols-3">
       @for (group of skillGroups; track group.titleKey) {
-        <div class="app-panel app-skill-card rounded-2xl border p-5">
+        <div class="app-panel app-neon-panel rounded-2xl border p-5">
           <h3 class="app-title text-xl font-semibold">{{ i18n.t(group.titleKey) }}</h3>
           <div class="mt-5 flex flex-wrap gap-2">
             @for (skill of group.items; track skill) {
-              <p-chip styleClass="app-skill-chip" [label]="skillLabel(skill)" />
+              <p-chip styleClass="app-tech-chip" [label]="skillLabel(skill)" />
             }
           </div>
         </div>
