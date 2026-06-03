@@ -110,6 +110,97 @@ h3,
   line-height: 1.2;
 }
 
+.app-project-card {
+  appearance: none;
+  background: color-mix(in srgb, var(--app-bg) 76%, var(--app-card));
+  border-color: color-mix(in srgb, var(--app-accent) 34%, var(--app-border));
+  border-radius: 1rem;
+  box-shadow: 0 0 20px color-mix(in srgb, var(--app-accent) 15%, transparent), 0 18px 52px -42px var(--app-accent-strong);
+  color: inherit;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  transition: border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+  width: 100%;
+}
+
+.app-project-card:hover,
+.app-project-card:focus-visible {
+  border-color: color-mix(in srgb, var(--app-accent) 62%, var(--app-border));
+  box-shadow: 0 0 28px color-mix(in srgb, var(--app-accent) 24%, transparent), 0 20px 58px -38px var(--app-accent-strong);
+  transform: translateY(-3px);
+}
+
+.app-project-card:focus-visible {
+  outline: 2px solid var(--app-accent);
+  outline-offset: 4px;
+}
+
+.app-project-image,
+.app-project-dialog-image {
+  aspect-ratio: 16 / 10;
+  background: var(--app-bg);
+  object-fit: cover;
+  width: 100%;
+}
+
+.app-project-tag.p-tag {
+  background: color-mix(in srgb, var(--app-accent) 12%, transparent);
+  border: 1px solid color-mix(in srgb, var(--app-accent) 34%, transparent);
+  color: var(--app-subtle);
+  font-family: var(--app-detail-font);
+  font-weight: 600;
+}
+
+.app-project-dialog .p-dialog-content,
+.app-project-dialog .p-dialog-header {
+  background: var(--app-card);
+  color: var(--app-text);
+}
+
+.app-project-dialog.p-dialog {
+  border: 1px solid color-mix(in srgb, var(--app-accent) 32%, var(--app-border));
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.app-project-dialog .p-dialog-header {
+  border-bottom: 1px solid var(--app-border);
+  border-radius: 1rem 1rem 0 0;
+}
+
+.app-project-dialog .p-dialog-content {
+  border-radius: 0 0 1rem 1rem;
+}
+
+.app-project-dialog-image {
+  border: 1px solid color-mix(in srgb, var(--app-accent) 34%, var(--app-border));
+  border-radius: 8px;
+  box-shadow: 0 0 22px color-mix(in srgb, var(--app-accent) 16%, transparent);
+}
+
+.app-dialog-link {
+  align-items: center;
+  background: color-mix(in srgb, var(--app-accent) 11%, transparent);
+  border: 1px solid color-mix(in srgb, var(--app-accent) 36%, transparent);
+  border-radius: 8px;
+  color: var(--app-text);
+  display: inline-flex;
+  font-weight: 700;
+  gap: 0.5rem;
+  justify-content: center;
+  padding: 0.75rem 1rem;
+  text-decoration: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.app-dialog-link:hover,
+.app-dialog-link:focus-visible {
+  background: color-mix(in srgb, var(--app-accent) 18%, transparent);
+  border-color: color-mix(in srgb, var(--app-accent) 58%, transparent);
+  transform: translateY(-1px);
+}
+
 .app-label {
   color: var(--app-text);
 }

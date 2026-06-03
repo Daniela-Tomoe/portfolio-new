@@ -1,19 +1,59 @@
-<section id="projects" class="app-section app-section-muted py-20">
+<section id="projects" class="app-section app-section-muted py-24">
   <div appScrollReveal class="mx-auto max-w-6xl px-4">
     <h2 class="app-title text-3xl font-black">{{ i18n.t('projects.title') }}</h2>
     <p class="app-muted mt-3">{{ i18n.t('projects.subtitle') }}</p>
     <div class="mt-10 grid gap-5 lg:grid-cols-3">
       @for (project of projects; track project.title) {
-        <p-card [header]="project.title" [subheader]="project.type">
-          <p class="app-muted min-h-24">{{ project.description }}</p>
-          <div class="mb-5 flex flex-wrap gap-2">
-            @for (tech of project.techs; track tech) {
-              <p-tag [value]="tech" severity="info" />
-            }
-          </div>
-          <p-button label="GitHub" icon="pi pi-github" severity="secondary" [outlined]="true" />
-        </p-card>
+        <button type="button" class="app-panel app-project-card rounded-2xl border text-left" (click)="openProject(project)">
+          <img class="app-project-image" [src]="project.image" [alt]="project.title" />
+          <span class="block p-5">
+            <span class="app-title block text-xl font-bold">{{ project.title }}</span>
+            <span class="app-muted mt-1 block text-sm">{{ project.type }}</span>
+            <span class="mt-5 flex flex-wrap gap-2">
+              @for (tech of project.techs; track tech) {
+                <p-tag styleClass="app-project-tag" [value]="tech" />
+              }
+            </span>
+          </span>
+        </button>
       }
     </div>
   </div>
 </section>
+
+<p-dialog
+  [(visible)]="isProjectDialogOpen"
+  [modal]="true"
+  [dismissableMask]="true"
+  [draggable]="false"
+  [resizable]="false"
+  [header]="selectedProject?.title || ''"
+  styleClass="app-project-dialog"
+  [style]="{ width: 'min(92vw, 760px)' }"
+>
+  @if (selectedProject) {
+    <div class="grid gap-6">
+      <img class="app-project-dialog-image" [src]="selectedProject.image" [alt]="selectedProject.title" />
+
+      <div>
+        <p class="app-muted m-0 leading-7">{{ selectedProject.details }}</p>
+        <div class="mt-5 flex flex-wrap gap-2">
+          @for (tech of selectedProject.techs; track tech) {
+            <p-tag styleClass="app-project-tag" [value]="tech" />
+          }
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3 sm:flex-row">
+        <a class="app-dialog-link" [href]="selectedProject.liveDemoUrl" target="_blank" rel="noopener noreferrer">
+          <i class="pi pi-external-link"></i>
+          Live demo
+        </a>
+        <a class="app-dialog-link" [href]="selectedProject.githubUrl" target="_blank" rel="noopener noreferrer">
+          <i class="pi pi-github"></i>
+          GitHub
+        </a>
+      </div>
+    </div>
+  }
+</p-dialog>
