@@ -1,22 +1,22 @@
 <section id="projects" class="app-section app-section-muted py-24">
   <div appScrollReveal class="mx-auto max-w-6xl px-4">
     <h2 class="app-title text-3xl font-black">{{ i18n.t('projects.title') }}</h2>
-    <p class="app-muted mt-3">{{ i18n.t('projects.subtitle') }}</p>
+    <!-- <p class="app-muted mt-3">{{ i18n.t('projects.subtitle') }}</p> -->
     <div class="mt-10 grid gap-5 lg:grid-cols-3">
-      @for (project of projects; track project.title) {
+      @for (project of projects; track project.id) {
         <button type="button" class="app-panel app-neon-panel app-neon-panel-interactive app-project-card flex h-full flex-col rounded-2xl border text-left" (click)="openProject(project)">
           @if (project.isConfidential) {
             <span class="app-project-media app-project-confidential" aria-hidden="true">
               <span class="app-project-confidential-icon">
                 <i class="pi pi-lock"></i>
               </span>
-              <span class="app-project-confidential-label">Confidential project</span>
+              <span class="app-project-confidential-label">{{ i18n.t('projects.confidential.label') }}</span>
             </span>
           } @else {
-            <img class="app-project-media bg-slate-900 object-cover" [src]="project.image" [alt]="project.title" />
+            <img class="app-project-media bg-slate-900 object-cover" [src]="project.image" [alt]="i18n.t(project.titleKey)" />
           }
           <span class="flex flex-1 flex-col p-5">
-            <span class="app-title block text-xl font-bold">{{ project.title }}</span>
+            <span class="app-title block text-xl font-bold">{{ i18n.t(project.titleKey) }}</span>
             <span class="mt-5 flex flex-wrap gap-2">
               @for (tech of project.techs; track tech) {
                 <p-chip styleClass="app-tech-chip" [label]="tech" />
@@ -25,6 +25,12 @@
           </span>
         </button>
       }
+    </div>
+    <div class="mt-10 flex justify-center">
+      <a class="app-panel app-neon-panel app-neon-panel-interactive inline-flex items-center justify-center gap-2 rounded-lg border px-5 py-3 font-bold no-underline transition" [href]="githubRepositoryUrl" target="_blank" rel="noopener noreferrer">
+        <i class="pi pi-github"></i>
+        {{ i18n.t('projects.repositoryCta') }}
+      </a>
     </div>
   </div>
 </section>
@@ -35,25 +41,36 @@
   [dismissableMask]="true"
   [draggable]="false"
   [resizable]="false"
-  [header]="selectedProject?.title || ''"
+  [header]="selectedProject ? i18n.t(selectedProject.titleKey) : ''"
   styleClass="app-project-dialog"
   [style]="{ width: 'min(92vw, 760px)' }"
 >
   @if (selectedProject) {
     <div class="grid gap-6">
       @if (selectedProject.isConfidential) {
-        <div class="app-project-dialog-image app-project-confidential aspect-[16/10] w-full" aria-hidden="true">
+        <div class="app-project-dialog-image app-project-confidential app-project-dialog-confidential-media w-full" aria-hidden="true">
           <span class="app-project-confidential-icon">
             <i class="pi pi-lock"></i>
           </span>
-          <span class="app-project-confidential-label">Confidential project</span>
+          <span class="app-project-confidential-label">{{ i18n.t('projects.confidential.label') }}</span>
         </div>
       } @else {
-        <img class="app-project-dialog-image aspect-[16/10] w-full object-cover" [src]="selectedProject.image" [alt]="selectedProject.title" />
+        <img class="app-project-dialog-image aspect-[16/10] w-full object-cover" [src]="selectedProject.image" [alt]="i18n.t(selectedProject.titleKey)" />
       }
 
       <div>
-        <p class="app-muted m-0 whitespace-pre-line leading-7">{{ selectedProject.details }}</p>
+        @if (selectedProject.detailSections?.length) {
+          <div class="app-project-detail-sections">
+            @for (section of selectedProject.detailSections; track section.titleKey) {
+              <section class="app-project-detail-section">
+                <h3 class="app-title m-0 text-lg font-bold">{{ i18n.t(section.titleKey) }}</h3>
+                <p class="app-muted m-0 whitespace-pre-line leading-7">{{ i18n.t(section.contentKey) }}</p>
+              </section>
+            }
+          </div>
+        } @else {
+          <p class="app-muted m-0 whitespace-pre-line leading-7">{{ i18n.t(selectedProject.detailsKey) }}</p>
+        }
         <div class="mt-5 flex flex-wrap gap-2">
           @for (tech of selectedProject.techs; track tech) {
             <p-chip styleClass="app-tech-chip" [label]="tech" />
@@ -61,16 +78,20 @@
         </div>
       </div>
 
-      <div class="flex flex-col gap-3 sm:flex-row">
-        <a class="app-panel app-dialog-link inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-3 font-bold no-underline transition" [href]="selectedProject.liveDemoUrl" target="_blank" rel="noopener noreferrer">
-          <i class="pi pi-external-link"></i>
-          Live demo
-        </a>
-        <a class="app-panel app-dialog-link inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-3 font-bold no-underline transition" [href]="selectedProject.githubUrl" target="_blank" rel="noopener noreferrer">
-          <i class="pi pi-github"></i>
-          GitHub
-        </a>
-      </div>
+      @if (selectedProject.isConfidential) {
+        <p class="app-project-confidential-note m-0">{{ i18n.t('projects.confidential.note') }}</p>
+      } @else {
+        <div class="flex flex-col gap-3 sm:flex-row">
+          <a class="app-panel app-dialog-link inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-3 font-bold no-underline transition" [href]="selectedProject.liveDemoUrl" target="_blank" rel="noopener noreferrer">
+            <i class="pi pi-external-link"></i>
+            Live demo
+          </a>
+          <a class="app-panel app-dialog-link inline-flex items-center justify-center gap-2 rounded-lg border px-4 py-3 font-bold no-underline transition" [href]="selectedProject.githubUrl" target="_blank" rel="noopener noreferrer">
+            <i class="pi pi-github"></i>
+            GitHub
+          </a>
+        </div>
+      }
     </div>
   }
 </p-dialog>

@@ -58,8 +58,33 @@
 }
 
 .app-project-dialog-image {
+  background: #0f172b;
   border: 1px solid color-mix(in srgb, var(--app-accent) 34%, var(--app-border));
   border-radius: 8px;
+}
+
+.app-project-dialog-confidential-media {
+  min-height: 8.5rem;
+}
+
+.app-project-detail-sections {
+  display: grid;
+  gap: 1.25rem;
+}
+
+.app-project-detail-section {
+  display: grid;
+  gap: 0.55rem;
+}
+
+.app-project-confidential-note {
+  background: color-mix(in srgb, var(--app-accent) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--app-accent) 24%, var(--app-border));
+  border-radius: 8px;
+  color: var(--app-subtle);
+  font-size: 0.95rem;
+  line-height: 1.6;
+  padding: 0.9rem 1rem;
 }
 
 .app-dialog-link {
