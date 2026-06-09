@@ -79,11 +79,7 @@ const translations: Record<Language, Record<string, string>> = {
     'experience.activities.item6': 'Colabora\u00e7\u00e3o com front-end, back-end, Product Owner e designer em sprints.',
     'experience.paragraph2': 'Ao longo da experi\u00eancia, passei a atuar com mais autonomia nas demandas de front-end, contribuindo para a evolu\u00e7\u00e3o e entrega de funcionalidades.',
     'contact.title': 'Contato',
-    'contact.subtitle': 'Vamos conversar sobre seu pr\u00f3ximo projeto ou oportunidade.',
-    'contact.name': 'Nome',
-    'contact.email': 'E-mail',
-    'contact.message': 'Mensagem',
-    'contact.send': 'Enviar mensagem'
+    'contact.subtitle': 'Estou aberta a oportunidades e colabora\u00e7\u00f5es. Voc\u00ea pode me encontrar pelos canais abaixo.'
   },
   en: {
     'nav.home': 'Home',
@@ -161,11 +157,7 @@ const translations: Record<Language, Record<string, string>> = {
     'experience.activities.item6': 'Collaboration with front-end, back-end, Product Owner, and designer roles in sprints.',
     'experience.paragraph2': 'Throughout this experience, I started working with more autonomy on front-end demands, contributing to the evolution and delivery of features.',
     'contact.title': 'Contact',
-    'contact.subtitle': 'Let us talk about your next project or opportunity.',
-    'contact.name': 'Name',
-    'contact.email': 'Email',
-    'contact.message': 'Message',
-    'contact.send': 'Send message'
+    'contact.subtitle': 'I am open to opportunities and collaborations. You can find me through the channels below.'
   }
 };
 

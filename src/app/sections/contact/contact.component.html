@@ -1,33 +1,61 @@
 <section id="contact" class="app-section app-section-raised py-20">
-  <div appScrollReveal class="mx-auto grid max-w-6xl gap-10 px-4 lg:grid-cols-[0.8fr_1.2fr]">
+  <div appScrollReveal class="mx-auto grid max-w-3xl gap-10 px-4">
     <div>
       <h2 class="app-title text-3xl font-black">{{ i18n.t('contact.title') }}</h2>
       <p class="app-muted mt-4 text-lg leading-8">{{ i18n.t('contact.subtitle') }}</p>
-      <div class="app-muted mt-8 space-y-3">
-        <p><i class="app-accent-text pi pi-envelope mr-2"></i>email&#64;exemplo.com</p>
-        <p><i class="app-accent-text pi pi-linkedin mr-2"></i>linkedin.com/in/seu-perfil</p>
-        <p><i class="app-accent-text pi pi-github mr-2"></i>github.com/seu-usuario</p>
-      </div>
     </div>
 
-    <form class="app-panel rounded-lg border p-5 shadow-sm">
-      <div class="grid gap-4 sm:grid-cols-2">
-        <label class="app-label grid gap-2 text-sm font-medium">
-          {{ i18n.t('contact.name') }}
-          <input pInputText type="text" name="name" />
-        </label>
-        <label class="app-label grid gap-2 text-sm font-medium">
-          {{ i18n.t('contact.email') }}
-          <input pInputText type="email" name="email" />
-        </label>
+    <div class="grid gap-9">
+      <div class="grid gap-1">
+        <div class="flex items-center gap-1">
+          <h3 class="app-title m-0 font-mono text-xl font-black tracking-[0.16em]">Email</h3>
+          <button
+            type="button"
+            class="app-muted inline-flex h-9 w-9 items-center justify-center rounded-md border border-transparent transition hover:border-[var(--app-border)] hover:text-[var(--app-text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--app-accent)]"
+            aria-label="Copiar e-mail"
+            title="Copiar e-mail"
+            (click)="copyEmail()"
+          >
+            <i class="pi pi-copy text-sm"></i>
+          </button>
+        </div>
+        <a
+          [href]="'mailto:' + email"
+          class="group flex min-w-0 items-center gap-3 font-mono text-base text-[var(--app-text)] no-underline sm:text-lg"
+          aria-label="Enviar e-mail"
+        >
+          <i class="app-accent-text pi pi-envelope text-2xl"></i>
+          <span class="break-all transition group-hover:text-[var(--app-accent)]">mailto:{{ email }}</span>
+        </a>
       </div>
-      <label class="app-label mt-4 grid gap-2 text-sm font-medium">
-        {{ i18n.t('contact.message') }}
-        <textarea class="app-textarea min-h-36 rounded-md border p-3 outline-none" name="message"></textarea>
-      </label>
-      <div class="mt-5">
-        <p-button [label]="i18n.t('contact.send')" icon="pi pi-send" severity="success" />
+
+      <div class="grid gap-1">
+        <h3 class="app-title m-0 font-mono text-xl font-black tracking-[0.16em]">LinkedIn</h3>
+        <a
+          [href]="linkedinUrl"
+          target="_blank"
+          rel="noreferrer"
+          class="group flex min-w-0 items-center gap-3 font-mono text-base text-[var(--app-text)] no-underline sm:text-lg"
+          aria-label="Abrir LinkedIn em nova aba"
+        >
+          <i class="app-accent-text pi pi-linkedin text-2xl"></i>
+          <span class="break-all transition group-hover:text-[var(--app-accent)]">{{ linkedinUrl }}</span>
+        </a>
       </div>
-    </form>
+
+      <div class="grid gap-1">
+        <h3 class="app-title m-0 font-mono text-xl font-black tracking-[0.16em]">GitHub</h3>
+        <a
+          [href]="githubUrl"
+          target="_blank"
+          rel="noreferrer"
+          class="group flex min-w-0 items-center gap-3 font-mono text-base text-[var(--app-text)] no-underline sm:text-lg"
+          aria-label="Abrir GitHub em nova aba"
+        >
+          <i class="app-accent-text pi pi-github text-2xl"></i>
+          <span class="break-all transition group-hover:text-[var(--app-accent)]">{{ githubUrl }}</span>
+        </a>
+      </div>
+    </div>
   </div>
 </section>
