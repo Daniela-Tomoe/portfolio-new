@@ -1,16 +1,32 @@
 <section id="experience" class="app-section py-20">
   <div appScrollReveal class="mx-auto max-w-6xl px-4">
     <h2 class="app-title text-3xl font-black">{{ i18n.t('experience.title') }}</h2>
-    <p class="app-muted mt-3">{{ i18n.t('experience.subtitle') }}</p>
-    <p-timeline [value]="events" align="alternate" styleClass="mt-12">
-      <ng-template pTemplate="content" let-event>
-        <article class="app-panel rounded-lg border p-5">
-          <p class="app-accent-text text-sm font-semibold">{{ event.period }}</p>
-          <h3 class="app-title mt-2 text-xl font-bold">{{ event.role }}</h3>
-          <p class="app-muted mt-2">{{ event.company }}</p>
-          <p class="app-subtle mt-3 text-sm leading-6">{{ event.summary }}</p>
-        </article>
-      </ng-template>
-    </p-timeline>
+    <!-- <p class="app-muted mt-3">{{ i18n.t('experience.subtitle') }}</p> -->
+
+    <article class="app-panel app-neon-panel mt-12 rounded-lg border p-6 md:p-8">
+      <header>
+        <h3 class="app-title m-0 text-2xl font-black ">{{ i18n.t('experience.role') }}</h3>
+        <p class="app-muted m-0 text-base font-semibold">{{ i18n.t('experience.company') }}</p>
+        <p class="app-accent-text mt-1 text-sm font-bold uppercase">{{ i18n.t('experience.period') }}</p>
+      </header>
+
+      <div class="mt-7 grid gap-6">
+        <p class="app-muted m-0 leading-8">{{ i18n.t('experience.paragraph1') }}</p>
+
+        <section>
+          <h4 class="app-title m-0 text-lg font-bold">{{ i18n.t('experience.activities.title') }}</h4>
+          <ul class="app-muted mt-1 grid gap-3 pl-5 leading-7 list-disc">
+            <li>{{ i18n.t('experience.activities.item1') }}</li>
+            <li>{{ i18n.t('experience.activities.item2') }}</li>
+            <li>{{ i18n.t('experience.activities.item3') }}</li>
+            <li>{{ i18n.t('experience.activities.item4') }}</li>
+            <li>{{ i18n.t('experience.activities.item5') }}</li>
+            <li>{{ i18n.t('experience.activities.item6') }}</li>
+          </ul>
+        </section>
+
+        <p class="app-muted m-0 leading-8">{{ i18n.t('experience.paragraph2') }}</p>
+      </div>
+    </article>
   </div>
 </section>
