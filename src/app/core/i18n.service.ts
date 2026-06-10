@@ -10,6 +10,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.projects': 'Projetos',
     'nav.experience': 'Experi\u00eancia',
     'nav.contact': 'Contato',
+    'header.menu.open': 'Abrir menu',
+    'header.menu.close': 'Fechar menu',
+    'header.language.toEnglish': 'Alternar idioma para ingl\u00eas',
+    'header.language.toPortuguese': 'Alternar idioma para portugu\u00eas',
+    'header.logoAlt': 'Logo pessoal',
     'theme.toDashboard': 'Usar tema de dashboard SaaS',
     'theme.toTech': 'Usar tema tech moderno',
     'hero.badge': 'Portf\u00f3lio Angular',
@@ -95,7 +100,15 @@ const translations: Record<Language, Record<string, string>> = {
     'experience.activities.item6': 'Colabora\u00e7\u00e3o com front-end, back-end, Product Owner e designer em sprints.',
     'experience.paragraph2': 'Ao longo da experi\u00eancia, passei a atuar com mais autonomia nas demandas de front-end, contribuindo para a evolu\u00e7\u00e3o e para a entrega de funcionalidades.',
     'contact.title': 'Contato',
-    'contact.subtitle': 'Estou aberta a oportunidades e colabora\u00e7\u00f5es. Voc\u00ea pode me encontrar pelos canais abaixo.'
+    'contact.subtitle': 'Estou aberta a oportunidades e colabora\u00e7\u00f5es. Voc\u00ea pode me encontrar pelos canais abaixo.',
+    'contact.copyEmail.label': 'Copiar e-mail',
+    'contact.copyEmail.success.summary': 'E-mail copiado',
+    'contact.copyEmail.success.detail': 'O endere\u00e7o foi copiado para a \u00e1rea de transfer\u00eancia.',
+    'contact.copyEmail.error.summary': 'N\u00e3o foi poss\u00edvel copiar',
+    'contact.copyEmail.error.detail': 'Copie o e-mail manualmente ou tente novamente.',
+    'contact.email.linkLabel': 'Enviar e-mail',
+    'contact.linkedin.linkLabel': 'Abrir LinkedIn em nova aba',
+    'contact.github.linkLabel': 'Abrir GitHub em nova aba'
   },
   en: {
     'nav.home': 'Home',
@@ -104,6 +117,11 @@ const translations: Record<Language, Record<string, string>> = {
     'nav.projects': 'Projects',
     'nav.experience': 'Experience',
     'nav.contact': 'Contact',
+    'header.menu.open': 'Open menu',
+    'header.menu.close': 'Close menu',
+    'header.language.toEnglish': 'Switch language to English',
+    'header.language.toPortuguese': 'Switch language to Portuguese',
+    'header.logoAlt': 'Personal logo',
     'theme.toDashboard': 'Use SaaS dashboard theme',
     'theme.toTech': 'Use modern tech theme',
     'hero.badge': 'Angular Portfolio',
@@ -189,7 +207,15 @@ const translations: Record<Language, Record<string, string>> = {
     'experience.activities.item6': 'Collaboration with front-end, back-end, Product Owner, and designer roles in sprints.',
     'experience.paragraph2': 'Throughout this experience, I started working with more autonomy on front-end demands, contributing to the evolution and delivery of features.',
     'contact.title': 'Contact',
-    'contact.subtitle': 'I am open to opportunities and collaborations. You can find me through the channels below.'
+    'contact.subtitle': 'I am open to opportunities and collaborations. You can find me through the channels below.',
+    'contact.copyEmail.label': 'Copy e-mail',
+    'contact.copyEmail.success.summary': 'E-mail copied',
+    'contact.copyEmail.success.detail': 'The address was copied to your clipboard.',
+    'contact.copyEmail.error.summary': 'Could not copy',
+    'contact.copyEmail.error.detail': 'Copy the e-mail manually or try again.',
+    'contact.email.linkLabel': 'Send e-mail',
+    'contact.linkedin.linkLabel': 'Open LinkedIn in a new tab',
+    'contact.github.linkLabel': 'Open GitHub in a new tab'
   }
 };
 

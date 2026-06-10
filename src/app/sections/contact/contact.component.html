@@ -1,4 +1,6 @@
 <section id="contact" class="app-section app-section-raised py-24">
+  <p-toast position="top-right" />
+
   <div appScrollReveal class="mx-auto max-w-6xl px-6 sm:px-8 lg:px-4">
     <div>
       <h2 class="app-title text-3xl font-black">{{ i18n.t('contact.title') }}</h2>
@@ -12,8 +14,8 @@
           <button
             type="button"
             class="app-muted inline-flex h-9 w-9 items-center justify-center rounded-md border border-transparent transition hover:border-[var(--app-border)] hover:text-[var(--app-text)] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[var(--app-accent)]"
-            aria-label="Copiar e-mail"
-            title="Copiar e-mail"
+            [attr.aria-label]="i18n.t('contact.copyEmail.label')"
+            [title]="i18n.t('contact.copyEmail.label')"
             (click)="copyEmail()"
           >
             <i class="pi pi-copy text-sm"></i>
@@ -22,7 +24,7 @@
         <a
           [href]="'mailto:' + email"
           class="group inline-flex max-w-full items-center gap-3 font-mono text-base text-[var(--app-text)] no-underline sm:text-lg"
-          aria-label="Enviar e-mail"
+          [attr.aria-label]="i18n.t('contact.email.linkLabel')"
         >
           <i class="app-accent-text pi pi-envelope text-2xl"></i>
           <span class="break-all transition group-hover:text-[var(--app-accent)]">{{ email }}</span>
@@ -36,7 +38,7 @@
           target="_blank"
           rel="noreferrer"
           class="group inline-flex max-w-full items-center gap-3 font-mono text-base text-[var(--app-text)] no-underline sm:text-lg"
-          aria-label="Abrir LinkedIn em nova aba"
+          [attr.aria-label]="i18n.t('contact.linkedin.linkLabel')"
         >
           <i class="app-accent-text pi pi-linkedin text-2xl"></i>
           <span class="break-all transition group-hover:text-[var(--app-accent)]">{{ linkedinUrl }}</span>
@@ -50,7 +52,7 @@
           target="_blank"
           rel="noreferrer"
           class="group inline-flex max-w-full items-center gap-3 font-mono text-base text-[var(--app-text)] no-underline sm:text-lg"
-          aria-label="Abrir GitHub em nova aba"
+          [attr.aria-label]="i18n.t('contact.github.linkLabel')"
         >
           <i class="app-accent-text pi pi-github text-2xl"></i>
           <span class="break-all transition group-hover:text-[var(--app-accent)]">{{ githubUrl }}</span>

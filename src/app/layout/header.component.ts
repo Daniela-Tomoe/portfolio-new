@@ -58,6 +58,10 @@ export class HeaderComponent implements AfterViewInit, OnDestroy {
     this.isMenuOpen = !this.isMenuOpen;
   }
 
+  languageToggleLabel(): string {
+    return this.i18n.t(this.i18n.language() === 'pt' ? 'header.language.toEnglish' : 'header.language.toPortuguese');
+  }
+
   scrollTo(sectionId: SectionId): void {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
     this.activeSection.set(sectionId);

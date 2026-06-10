@@ -21,7 +21,6 @@ import { SkillsComponent } from './sections/skills/skills.component';
     ContactComponent,
     FooterComponent
   ],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss'
+  templateUrl: './app.component.html'
 })
 export class AppComponent {}

@@ -1,19 +1,23 @@
 <header class="app-header sticky top-0 z-50 border-b backdrop-blur">
   <div class="mx-auto flex max-w-6xl flex-nowrap items-center justify-between gap-3 px-4 py-3">
     <div class="order-1 flex items-center gap-2 md:order-3">
-      <p-button
-        styleClass="md:!hidden"
+      <button
+        pButton
+        type="button"
         icon="pi pi-bars"
         severity="secondary"
         [outlined]="true"
         size="small"
-        ariaLabel="Abrir menu"
-        (onClick)="toggleMenu()"
-      />
-      <p-button [label]="i18n.language().toUpperCase()" severity="secondary" [outlined]="true" size="small" (onClick)="i18n.toggleLanguage()" />
+        class="md:!hidden"
+        [attr.aria-label]="i18n.t('header.menu.open')"
+        [attr.aria-controls]="'mobile-navigation'"
+        [attr.aria-expanded]="isMenuOpen"
+        (click)="toggleMenu()"
+      ></button>
+      <p-button [label]="i18n.language().toUpperCase()" severity="secondary" [outlined]="true" size="small" [ariaLabel]="languageToggleLabel()" (onClick)="i18n.toggleLanguage()" />
     </div>
 
-    <img src="assets/images/personal-logo-removebg-preview.png" alt="Logo pessoal" class="order-2 h-8 w-auto object-contain md:order-1" />
+    <img src="assets/images/personal-logo-removebg-preview.png" [alt]="i18n.t('header.logoAlt')" class="order-2 h-8 w-auto object-contain md:order-1" />
 
     <nav class="app-muted order-2 hidden items-center gap-6 whitespace-nowrap text-sm font-medium md:flex">
       @for (item of navItems; track item.id) {
@@ -30,36 +34,42 @@
   </div>
 </header>
 
-<div
-  class="fixed inset-0 z-[60] bg-slate-950/75 px-4 py-3 backdrop-blur-xl md:hidden"
-  [class.hidden]="!isMenuOpen"
->
-  <div class="mx-auto flex max-w-6xl items-center justify-between gap-3">
-    <div class="flex items-center gap-2">
-      <p-button
-        icon="pi pi-times"
-        severity="secondary"
-        [outlined]="true"
-        size="small"
-        ariaLabel="Fechar menu"
-        (onClick)="closeMenu()"
-      />
-      <p-button [label]="i18n.language().toUpperCase()" severity="secondary" [outlined]="true" size="small" (onClick)="i18n.toggleLanguage()" />
+@if (isMenuOpen) {
+  <div
+    id="mobile-navigation"
+    class="fixed inset-0 z-[60] bg-slate-950/75 px-4 py-3 backdrop-blur-xl md:hidden"
+  >
+    <div class="mx-auto flex max-w-6xl items-center justify-between gap-3">
+      <div class="flex items-center gap-2">
+        <button
+          pButton
+          type="button"
+          icon="pi pi-times"
+          severity="secondary"
+          [outlined]="true"
+          size="small"
+          [attr.aria-label]="i18n.t('header.menu.close')"
+          [attr.aria-controls]="'mobile-navigation'"
+          [attr.aria-expanded]="isMenuOpen"
+          (click)="closeMenu()"
+        ></button>
+        <p-button [label]="i18n.language().toUpperCase()" severity="secondary" [outlined]="true" size="small" [ariaLabel]="languageToggleLabel()" (onClick)="i18n.toggleLanguage()" />
+      </div>
+
+      <img src="assets/images/personal-logo-removebg-preview.png" [alt]="i18n.t('header.logoAlt')" class="h-8 w-auto object-contain" />
     </div>
 
-    <img src="assets/images/personal-logo-removebg-preview.png" alt="Logo pessoal" class="h-8 w-auto object-contain" />
+    <nav class="mx-auto mt-14 flex max-w-sm flex-col items-stretch gap-3 text-center text-xl font-bold">
+      @for (item of navItems; track item.id) {
+        <a
+          class="app-nav-link rounded px-4 py-4 transition"
+          [class.is-active]="activeSection() === item.id"
+          [href]="'#' + item.id"
+          (click)="$event.preventDefault(); scrollTo(item.id)"
+        >
+          {{ i18n.t(item.labelKey) }}
+        </a>
+      }
+    </nav>
   </div>
-
-  <nav class="mx-auto mt-14 flex max-w-sm flex-col items-stretch gap-3 text-center text-xl font-bold">
-    @for (item of navItems; track item.id) {
-      <a
-        class="app-nav-link rounded px-4 py-4 transition"
-        [class.is-active]="activeSection() === item.id"
-        [href]="'#' + item.id"
-        (click)="$event.preventDefault(); scrollTo(item.id)"
-      >
-        {{ i18n.t(item.labelKey) }}
-      </a>
-    }
-  </nav>
-</div>
+}
