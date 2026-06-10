@@ -10,9 +10,9 @@ import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 })
 export class ContactComponent {
   readonly i18n = inject(I18nService);
-  readonly email = 'email@exemplo.com';
-  readonly linkedinUrl = 'https://www.linkedin.com/in/seu-perfil';
-  readonly githubUrl = 'https://github.com/seu-usuario';
+  readonly email = 'Danielatomoenk@gmail.com';
+  readonly linkedinUrl = 'https://www.linkedin.com/in/danielatomoe';
+  readonly githubUrl = 'https://github.com/Daniela-Tomoe';
 
   copyEmail(): void {
     void navigator.clipboard.writeText(this.email);
