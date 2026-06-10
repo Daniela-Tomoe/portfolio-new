@@ -13,6 +13,14 @@ import { ScrollRevealDirective } from '../../shared/scroll-reveal.directive';
 export class HomeComponent {
   readonly i18n = inject(I18nService);
 
+  get resumeUrl(): string {
+    return this.i18n.language() === 'pt' ? 'assets/docs/DanielaTomoe-ResumePtbr.pdf' : 'assets/docs/DanielaTomoe-ResumeEng.pdf';
+  }
+
+  get resumeFileName(): string {
+    return this.i18n.language() === 'pt' ? 'DanielaTomoe-ResumePtbr.pdf' : 'DanielaTomoe-ResumeEng.pdf';
+  }
+
   scrollTo(sectionId: string): void {
     document.getElementById(sectionId)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }

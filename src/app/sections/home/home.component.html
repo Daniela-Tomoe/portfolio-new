@@ -11,6 +11,16 @@
       <div class="mt-8 flex flex-col gap-3 sm:flex-row">
         <p-button [label]="i18n.t('hero.cta.primary')" icon="pi pi-briefcase" severity="success" (onClick)="scrollTo('projects')" />
         <p-button [label]="i18n.t('hero.cta.secondary')" icon="pi pi-send" severity="secondary" [outlined]="true" (onClick)="scrollTo('contact')" />
+        <a
+          pButton
+          [label]="i18n.t('hero.cta.resume')"
+          icon="pi pi-download"
+          severity="secondary"
+          [outlined]="true"
+          [href]="resumeUrl"
+          [download]="resumeFileName"
+          class="justify-center no-underline"
+        ></a>
       </div>
       <div class="app-accent-border app-muted mt-10 flex max-w-2xl flex-col gap-3 border-l-4 pl-5 sm:flex-row sm:items-center sm:gap-8">
         <p class="m-0">
