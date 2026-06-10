@@ -10,6 +10,11 @@ type ProjectDetailSection = {
   contentKey: string;
 };
 
+type ProjectTechnologySection = {
+  titleKey: string;
+  itemsKey: string;
+};
+
 type Project = {
   id: string;
   titleKey: string;
@@ -18,6 +23,7 @@ type Project = {
   descriptionKey: string;
   detailsKey: string;
   detailSections?: ProjectDetailSection[];
+  dialogTechnologySections?: ProjectTechnologySection[];
   techs: string[];
   liveDemoUrl?: string;
   githubUrl?: string;
@@ -53,6 +59,20 @@ export class ProjectsComponent {
           contentKey: 'projects.ongDb.section.features.content'
         }
       ],
+      dialogTechnologySections: [
+        {
+          titleKey: 'projects.technologies.group.core',
+          itemsKey: 'projects.ongDb.technologies.core'
+        },
+        {
+          titleKey: 'projects.technologies.group.ui',
+          itemsKey: 'projects.ongDb.technologies.ui'
+        },
+        {
+          titleKey: 'projects.technologies.group.integrations',
+          itemsKey: 'projects.ongDb.technologies.integrations'
+        }
+      ],
       techs: ['HTML5', 'CSS3', 'JavaScript'],
       liveDemoUrl: 'https://daniela-tomoe.github.io/Ong-DB-Projeto/pages/home/',
       githubUrl: 'https://github.com/Daniela-Tomoe/Ong-DB-Projeto'
@@ -71,6 +91,20 @@ export class ProjectsComponent {
         {
           titleKey: 'projects.oldPortfolio.section.features.title',
           contentKey: 'projects.oldPortfolio.section.features.content'
+        }
+      ],
+      dialogTechnologySections: [
+        {
+          titleKey: 'projects.technologies.group.core',
+          itemsKey: 'projects.oldPortfolio.technologies.core'
+        },
+        {
+          titleKey: 'projects.technologies.group.ui',
+          itemsKey: 'projects.oldPortfolio.technologies.ui'
+        },
+        {
+          titleKey: 'projects.technologies.group.integrations',
+          itemsKey: 'projects.oldPortfolio.technologies.integrations'
         }
       ],
       techs: ['HTML5', 'SCSS/SASS', 'JavaScript', 'Vite', 'i18n'],
@@ -95,6 +129,24 @@ export class ProjectsComponent {
         {
           titleKey: 'projects.farmManagement.section.features.title',
           contentKey: 'projects.farmManagement.section.features.content'
+        }
+      ],
+      dialogTechnologySections: [
+        {
+          titleKey: 'projects.technologies.group.core',
+          itemsKey: 'projects.farmManagement.technologies.core'
+        },
+        {
+          titleKey: 'projects.technologies.group.ui',
+          itemsKey: 'projects.farmManagement.technologies.ui'
+        },
+        {
+          titleKey: 'projects.technologies.group.integrations',
+          itemsKey: 'projects.farmManagement.technologies.integrations'
+        },
+        {
+          titleKey: 'projects.technologies.group.quality',
+          itemsKey: 'projects.farmManagement.technologies.quality'
         }
       ],
       techs: ['Angular', 'TypeScript', 'RxJS', 'REST APIs', 'PrimeNG'],

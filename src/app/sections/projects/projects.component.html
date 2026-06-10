@@ -70,11 +70,25 @@
         } @else {
           <p class="app-muted m-0 whitespace-pre-line leading-7">{{ i18n.t(selectedProject.detailsKey) }}</p>
         }
-        <div class="mt-5 flex flex-wrap gap-2">
-          @for (tech of selectedProject.techs; track tech) {
-            <p-chip styleClass="app-tech-chip" [label]="tech" />
-          }
-        </div>
+        @if (selectedProject.dialogTechnologySections?.length) {
+          <section class="mt-6">
+            <h3 class="app-title m-0 text-lg font-bold">{{ i18n.t('projects.technologies.title') }}</h3>
+            <div class="mt-4 grid gap-4">
+              @for (section of selectedProject.dialogTechnologySections; track section.titleKey) {
+                <div>
+                  <h4 class="app-title m-0 text-base font-bold">{{ i18n.t(section.titleKey) }}</h4>
+                  <p class="app-muted m-0 leading-7">{{ i18n.t(section.itemsKey) }}</p>
+                </div>
+              }
+            </div>
+          </section>
+        } @else {
+          <div class="mt-5 flex flex-wrap gap-2">
+            @for (tech of selectedProject.techs; track tech) {
+              <p-chip styleClass="app-tech-chip" [label]="tech" />
+            }
+          </div>
+        }
       </div>
 
       @if (selectedProject.isConfidential) {
