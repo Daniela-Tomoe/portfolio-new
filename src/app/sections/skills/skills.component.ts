@@ -23,33 +23,43 @@ export class SkillsComponent {
         'HTML5',
         'CSS3',
         'SCSS/SASS',
-        'Tailwind CSS'
-      ]
-    },
-    {
-      titleKey: 'skills.group.quality',
-      items: [
-        { key: 'skills.item.componentization' },
-        { key: 'skills.item.responsiveness' },
-        { key: 'skills.item.accessibility' },
-        { key: 'skills.item.usability' },
-        'Clean Code',
-        { key: 'skills.item.bugFixing' }
-      ]
-    },
-    {
-      titleKey: 'skills.group.technologies',
-      items: [
         'RxJS',
+        'REST APIs'
+      ]
+    },
+    {
+      titleKey: 'skills.group.ui',
+      items: [
+        'Tailwind CSS',
         'PrimeNG',
         'Angular Material',
         'Bootstrap',
-        'REST APIs',
+        { key: 'skills.item.componentization' },
+        { key: 'skills.item.responsiveness' },
+        { key: 'skills.item.accessibility' },
+        { key: 'skills.item.usability' }
+      ]
+    },
+    {
+      titleKey: 'skills.group.testing',
+      items: [
+        'Vitest',
+        'Angular TestBed',
+        { key: 'skills.item.unitTesting' },
+        { key: 'skills.item.componentTesting' },
+        { key: 'skills.item.codeCoverage' },
+        'Clean Code'
+      ]
+    },
+    {
+      titleKey: 'skills.group.tools',
+      items: [
         'Git',
         'GitHub',
         'Azure DevOps',
-        'Scrum',
-        'Vercel'
+        'OpenAI Codex',
+        'MCP',
+        { key: 'skills.item.agileMethodologies' }
       ]
     }
   ];

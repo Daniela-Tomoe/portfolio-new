@@ -2,7 +2,7 @@
   <div appScrollReveal class="mx-auto max-w-6xl px-6 sm:px-8 lg:px-4">
     <h2 class="app-title text-3xl font-black">{{ i18n.t('skills.title') }}</h2>
     <p class="app-muted mt-3 text-lg">{{ i18n.t('skills.subtitle') }}</p>
-    <div class="mt-10 grid gap-6 md:grid-cols-3">
+    <div class="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
       @for (group of skillGroups; track group.titleKey) {
         <div class="app-panel app-neon-panel rounded-2xl border p-5">
           <h3 class="app-title text-xl font-semibold">{{ i18n.t(group.titleKey) }}</h3>
